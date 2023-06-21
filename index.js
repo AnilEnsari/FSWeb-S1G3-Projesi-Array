@@ -136,7 +136,8 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod burasdaaya*/) {
+function indekstekiCesitiGetir(tatlar, i /*kod burasdaaya*/) {
+  return tatlar[i];
   /*kod buraya*/
 }
 
@@ -155,9 +156,14 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/) {
-  /*kod buraya*/
-}
+function ismeGoreCesitCikar(tatlar, lezzet /*kod buraya*/) {
+  for (let i = 0; i < tatlar.length; i++) {
+    if ((tatlar[i] = lezzet)) {
+      tatlar.splice(i, 1);
+    }
+  }
+  return ismeGoreCesitCikar();
+} /*kod buraya*/
 
 /* Görev 7:
 
@@ -179,8 +185,13 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
   Bu sorunu çözmek için GELİŞMİŞ DİZİ YÖNTEMLERİNİ (yani .filter) KULLANMAYIN.
 */
 
-function ismeGoreFiltrele(/*kod buraya*/) {
-  /*kod buraya*/
+function ismeGoreFiltrele(tatlar, filtre /*kod buraya*/) {
+  for (i = 0; i < tatlar.length; i++) {
+    if (tatlar[i].includes(filtre)) {
+      yeniarray.push(tatlar[i]);
+    }
+  }
+  return ismeGoreFiltrele; /*kod buraya*/
 }
 
 /* ALIŞTIRMA */
