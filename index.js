@@ -39,37 +39,11 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
    2. Alınan dizinin bir kopyasını döndür
 */
 
-function kopyala(tatlar) /*kod buraya*/ {
-  return (tatlar = [
-    "Muz",
-    "Vişne",
-    "Ceviz",
-    "Kestane",
-    "Kiraz",
-    "Çikolata",
-    "Fındık Çikolata",
-    "Fıstık Çikolata",
-    "Badem Çikolata",
-    "Franbuaz",
-    "Yaban Mersini",
-    "Tarçın",
-    "Badem",
-    "Kahve",
-    "Fındık",
-    "Anten Fıstık",
-    "Limon",
-    "Misket Limon",
-    "Akçaağaç Şurubu",
-    "Şeftali",
-    "Nane",
-    "Ananas",
-    "Ahududu",
-    "Çilek",
-    "Vanilya",
-  ]);
+function kopyala(kopyalanacakarray) /*kod buraya*/ {
+  const copy = [...kopyalanacakarray];
+  return copy;
   /*kod buraya*/
 }
-
 /* Görev 2:
 Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları kabul etmelidir:
    1. parametre olarak bir dizi
@@ -80,13 +54,13 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 Örneğin: dizi25Cesit(orijinalTatlar) kodunuz düzgün çalışıyorsa true değerini döndürür.
 */
 
-function dizi25Cesitmi(x /*kod buraya*/) {
-  if ((x.length = 25)) {
+function dizi25Cesitmi(tatlarDizisi) {
+  /*kod buraya*/
+  if (tatlarDizisi.length === 25) {
     return true;
   } else {
     return false;
   }
-  /*kod buraya*/
 }
 
 /* Görev 3:
@@ -102,7 +76,8 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 */
 
 function cesitEkle(tatlar, string) /*kod buraya*/ {
-  return tatlar.unshift(string);
+  tatlar.unshift(string);
+  return tatlar;
 
   /*kod buraya*/
 }
@@ -120,8 +95,8 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 function sonCesitiKaldir(dizi /*kod buraya*/) {
-  return dizi.pop();
-
+  dizi.pop();
+  return dizi;
   /*kod buraya*/
 }
 
@@ -158,11 +133,11 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
 
 function ismeGoreCesitCikar(tatlar, lezzet /*kod buraya*/) {
   for (let i = 0; i < tatlar.length; i++) {
-    if ((tatlar[i] = lezzet)) {
+    if (tatlar[i] == lezzet) {
       tatlar.splice(i, 1);
     }
   }
-  return ismeGoreCesitCikar();
+  return tatlar;
 } /*kod buraya*/
 
 /* Görev 7:
@@ -185,13 +160,14 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
   Bu sorunu çözmek için GELİŞMİŞ DİZİ YÖNTEMLERİNİ (yani .filter) KULLANMAYIN.
 */
 
-function ismeGoreFiltrele(tatlar, filtre /*kod buraya*/) {
-  for (i = 0; i < tatlar.length; i++) {
-    if (tatlar[i].includes(filtre)) {
+function ismeGoreFiltrele(tatlar, istenilenFiltre /*kod buraya*/) {
+  const yeniarray = [];
+  for (let i = 0; i < tatlar.length; i++) {
+    if (tatlar[i].includes(istenilenFiltre)) {
       yeniarray.push(tatlar[i]);
     }
   }
-  return ismeGoreFiltrele; /*kod buraya*/
+  return yeniarray; /*kod buraya*/
 }
 
 /* ALIŞTIRMA */
